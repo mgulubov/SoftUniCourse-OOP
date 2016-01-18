@@ -46,6 +46,7 @@
     <Compile Include="Units\Farm.cs" />
     <Compile Include="Units\FarmUnit.cs" />
     <Compile Include="Units\Food.cs" />
+    <Compile Include="Units\FoodPlant.cs" />
     <Compile Include="Units\FoodType.cs" />
     <Compile Include="Units\GameObject.cs" />
     <Compile Include="Interfaces\IEdible.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Units\ProductType.cs" />
     <Compile Include="Units\Product.cs" />
     <Compile Include="FarmersCreedMain.cs" />
+    <Compile Include="Units\TobaccoPlant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FarmDiagram.cd" />

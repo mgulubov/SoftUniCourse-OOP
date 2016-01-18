@@ -1,16 +1,13 @@
 ﻿namespace FarmersCreed.Units
 {
-    using System;
-
     public abstract class Plant : FarmUnit
     {
-        private int growTime;
+        private int growTimeCounter;
         private bool hasGrown;
 
-        protected Plant(string id, int health, int productionQuantity, int growTime)
-            : base(id, health, productionQuantity)
+        protected Plant(string id, int health, int productionQuantity, int growTime, ProductType productType)
+            : base(id, health, productionQuantity, productType)
         {
-            this.GrowTime = growTime;
             this.hasGrown = false;
         }
 
@@ -21,23 +18,33 @@
 
         public int GrowTime
         {
-            get { return this.growTime; }
-            set { throw new NotImplementedException(); }
+            get { return this.growTimeCounter; }
+            set
+            {
+                if (!HasGrown)
+                {
+                    this.growTimeCounter = value;
+                    if (this.growTimeCounter <= 0)
+                    {
+                        this.hasGrown = true;
+                    }
+                }
+            }
         }
 
         public void Water()
         {
-            throw new NotImplementedException();
+            this.Health += 2;
         }
 
         public void Wither()
         {
-            throw new NotImplementedException();
+            this.Health -= 1;
         }
 
-        public void Grow()
+        public virtual void Grow()
         {
-            throw new NotImplementedException();
+            this.GrowTime -= 1;
         }
     }
 }

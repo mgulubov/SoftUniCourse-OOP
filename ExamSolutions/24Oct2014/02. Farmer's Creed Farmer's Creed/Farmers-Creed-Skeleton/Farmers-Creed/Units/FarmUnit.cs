@@ -6,15 +6,19 @@ namespace FarmersCreed.Units
 
     public abstract class FarmUnit : GameObject, IProductProduceable
     {
+        private readonly string productId;
+        private readonly ProductType productType;
         private int health;
         private int productionQunatity;
         private bool isAlive;
 
-        protected FarmUnit(string id, int health, int productionQuantity)
+        protected FarmUnit(string id, int health, int productionQuantity, ProductType productType)
             : base(id)
         {
+            this.productId = id + "Product";
             this.Health = health;
             this.ProductionQuantity = productionQuantity;
+            this.productType = productType;
             this.isAlive = true;
         }
 
@@ -51,6 +55,10 @@ namespace FarmersCreed.Units
             }
         }
 
-        public abstract Product GetProduct();
+        public virtual Product GetProduct()
+        {
+            Product product = new Product(this.productId, this.productType, this.ProductionQuantity);
+            return product;
+        }
     }
 }

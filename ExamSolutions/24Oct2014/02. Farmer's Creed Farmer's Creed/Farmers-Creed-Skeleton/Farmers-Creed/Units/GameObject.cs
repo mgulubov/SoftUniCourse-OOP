@@ -6,7 +6,7 @@
     {
         private string id;
 
-        public GameObject(string id)
+        protected GameObject(string id)
         {
             this.Id = id;
         }
@@ -18,7 +18,7 @@
             {
                 if (String.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException("Object id cannot be null!");
+                    throw new ArgumentNullException(value, "Object id cannot be null!");
                 }
 
                 this.id = value;
