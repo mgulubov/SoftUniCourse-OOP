@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CustomLINQExtensionMethods", "01.CustomLINQExtensionMethods\01.CustomLINQExtensionMethods.csproj", "{690CAD3E-05D3-4A0F-987C-69A3990812BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.InterestCalculator", "02.InterestCalculator\02.InterestCalculator.csproj", "{EAB34528-FF5F-45F6-A5E0-B6F043CCFD5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.AsynchronousTimer", "03.AsynchronousTimer\03.AsynchronousTimer.csproj", "{2DC599DA-9295-49DC-B6DA-9D62AD8F3131}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{690CAD3E-05D3-4A0F-987C-69A3990812BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690CAD3E-05D3-4A0F-987C-69A3990812BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690CAD3E-05D3-4A0F-987C-69A3990812BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690CAD3E-05D3-4A0F-987C-69A3990812BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB34528-FF5F-45F6-A5E0-B6F043CCFD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB34528-FF5F-45F6-A5E0-B6F043CCFD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB34528-FF5F-45F6-A5E0-B6F043CCFD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB34528-FF5F-45F6-A5E0-B6F043CCFD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC599DA-9295-49DC-B6DA-9D62AD8F3131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC599DA-9295-49DC-B6DA-9D62AD8F3131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC599DA-9295-49DC-B6DA-9D62AD8F3131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC599DA-9295-49DC-B6DA-9D62AD8F3131}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
