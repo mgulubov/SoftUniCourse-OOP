@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4ADFF088-EE43-4EE3-A608-C23B94EC6BE0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blobs</RootNamespace>
+    <AssemblyName>Blobs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Enums\AttackTypes.cs" />
+    <Compile Include="Enums\BehaviorTypes.cs" />
+    <Compile Include="Enums\CommandTypes.cs" />
+    <Compile Include="Interfaces\IArguments.cs" />
+    <Compile Include="Interfaces\IAttack.cs" />
+    <Compile Include="Interfaces\IAttackable.cs" />
+    <Compile Include="Interfaces\IBehavior.cs" />
+    <Compile Include="Interfaces\IBlob.cs" />
+    <Compile Include="Interfaces\IBlobFactory.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\ICommandArguments.cs" />
+    <Compile Include="Interfaces\IDamaging.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IExecutable.cs" />
+    <Compile Include="Interfaces\IFactory.cs" />
+    <Compile Include="Interfaces\IHandler.cs" />
+    <Compile Include="Interfaces\IInputReader.cs" />
+    <Compile Include="Interfaces\IOutputWriter.cs" />
+    <Compile Include="Interfaces\IOwned.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRunnable.cs" />
+    <Compile Include="Interfaces\INotifier.cs" />
+    <Compile Include="Interfaces\IStopable.cs" />
+    <Compile Include="Interfaces\IUpdateable.cs" />
+    <Compile Include="Models\Attack\AbstractAttack.cs" />
+    <Compile Include="Models\Behavior\AbstractBehavior.cs" />
+    <Compile Include="Models\Behavior\AggressiveBehavior.cs" />
+    <Compile Include="Models\Blob.cs" />
+    <Compile Include="Models\Attack\BlobplodeAttack.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Behavior\InflatedBehavior.cs" />
+    <Compile Include="Models\Attack\PutridFartAttack.cs" />
+    <Compile Include="Models\Commands\AbstractCommand.cs" />
+    <Compile Include="Models\Commands\AttackCommand.cs" />
+    <Compile Include="Models\Commands\CreateCommand.cs" />
+    <Compile Include="Models\Commands\DropCommand.cs" />
+    <Compile Include="Models\Commands\PassCommand.cs" />
+    <Compile Include="Models\Commands\StatusCommand.cs" />
+    <Compile Include="BlobsMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Factories\AttackFactory.cs" />
+    <Compile Include="Utils\Factories\BehaviorFactory.cs" />
+    <Compile Include="Utils\Factories\BlobFactory.cs" />
+    <Compile Include="Utils\ErrorMessages.cs" />
+    <Compile Include="Utils\Handlers\CommandArguments.cs" />
+    <Compile Include="Utils\Handlers\CommandHandler.cs" />
+    <Compile Include="Utils\InputReaders\ConsoleInputReader.cs" />
+    <Compile Include="Utils\Notifiers\Notifier.cs" />
+    <Compile Include="Utils\OutputWriter\ConsoleOutputWriter.cs" />
+    <Compile Include="Utils\Repos\BlobRepository.cs" />
+    <Compile Include="Utils\Repos\CommandRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
