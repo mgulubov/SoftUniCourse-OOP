@@ -1,5 +1,0 @@
-C:\Users\wolfy\Documents\Visual Studio 2013\Projects\OOPExam-20122015Morning\Blobs\bin\Debug\Blobs.exe.config
-C:\Users\wolfy\Documents\Visual Studio 2013\Projects\OOPExam-20122015Morning\Blobs\bin\Debug\Blobs.exe
-C:\Users\wolfy\Documents\Visual Studio 2013\Projects\OOPExam-20122015Morning\Blobs\bin\Debug\Blobs.pdb
-C:\Users\wolfy\Documents\Visual Studio 2013\Projects\OOPExam-20122015Morning\Blobs\obj\Debug\Blobs.exe
-C:\Users\wolfy\Documents\Visual Studio 2013\Projects\OOPExam-20122015Morning\Blobs\obj\Debug\Blobs.pdb
