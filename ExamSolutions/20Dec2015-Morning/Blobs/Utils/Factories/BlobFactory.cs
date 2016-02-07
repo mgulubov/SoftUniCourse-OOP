@@ -16,7 +16,7 @@
         public static readonly IBlobFactory Instance = new BlobFactory();
 
         /// <summary>
-        /// Private default constructor.
+        /// Prevents a default instance of the <see cref="BlobFactory"/> class from being created.
         /// </summary>
         private BlobFactory()
         {

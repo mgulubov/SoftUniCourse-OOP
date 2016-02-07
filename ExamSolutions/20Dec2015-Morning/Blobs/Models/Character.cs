@@ -12,7 +12,7 @@
         private string name;
 
         /// <summary>
-        /// Constructor with 1 parameter.
+        /// Initializes a new instance of the <see cref="Character"/> class.
         /// </summary>
         /// <param name="name">The character Name.</param>
         protected Character(string name)

@@ -18,7 +18,7 @@
         private readonly IFactory<ICommand> commandFactory; 
 
         /// <summary>
-        /// Default constructor. Calls the constructor overload with a default command factory object.
+        /// Initializes a new instance of the <see cref="CommandRepository"/> class.
         /// </summary>
         public CommandRepository()
             : this(DefaultCommandFactory)
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// COnstructor with one parameter. Initialises the commands field and populates the commands list through the Update method.
+        /// Initializes a new instance of the <see cref="CommandRepository"/> class.
         /// </summary>
         /// <param name="commandFactory">The command factory object to be used for creating the commands.</param>
         public CommandRepository(IFactory<ICommand> commandFactory)

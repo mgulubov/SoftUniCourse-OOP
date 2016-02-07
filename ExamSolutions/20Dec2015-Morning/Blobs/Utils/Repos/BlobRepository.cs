@@ -13,7 +13,7 @@
         private readonly IDictionary<string, IBlob> blobs;
 
         /// <summary>
-        /// Default constructor. Calls the constructor override with a default INotifier value.
+        /// Initializes a new instance of the <see cref="BlobRepository"/> class.
         /// </summary>
         public BlobRepository()
             : this(new Notifier())
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// Constructor with 1 parameter.
+        /// Initializes a new instance of the <see cref="BlobRepository"/> class.
         /// </summary>
         /// <param name="notifier">INotifier object used in the Update method.</param>
         public BlobRepository(INotifier notifier)

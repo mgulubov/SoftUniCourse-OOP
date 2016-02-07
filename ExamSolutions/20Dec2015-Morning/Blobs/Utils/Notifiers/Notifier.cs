@@ -11,8 +11,8 @@
         private readonly ICollection<IUpdateable> observers;
 
         /// <summary>
-        /// Default constructor with 0 arguments. 
-        /// Initialises the observers field with a List object of IUpdateable generic type.
+        /// Initializes a new instance of the <see cref="Notifier"/> class. 
+        /// Initializes the observers field with a List object of IUpdateable generic type.
         /// </summary>
         public Notifier()
         {

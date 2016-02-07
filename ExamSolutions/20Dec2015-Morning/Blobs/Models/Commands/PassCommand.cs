@@ -10,7 +10,7 @@
         private static readonly string Name = CommandTypes.Pass.ToString().ToLower();
 
         /// <summary>
-        /// Initialises the base constructor with the value of the Name constant.
+        /// Initializes a new instance of the <see cref="PassCommand"/> class.
         /// </summary>
         public PassCommand()
             : base(Name)

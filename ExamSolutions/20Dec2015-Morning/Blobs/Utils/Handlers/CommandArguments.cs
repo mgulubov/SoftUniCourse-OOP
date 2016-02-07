@@ -8,7 +8,7 @@
     public class CommandArguments : ICommandArguments
     {
         /// <summary>
-        /// COnstructor with 3 parameters.
+        /// Initializes a new instance of the <see cref="CommandArguments"/> class.
         /// </summary>
         /// <param name="blobRepository">IRepository object of generic type IBlob.</param>
         /// <param name="outputWriter">IOutputWriter object.</param>

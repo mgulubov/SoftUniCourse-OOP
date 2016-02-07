@@ -12,7 +12,7 @@
         private int turnsCount = 0;
 
         /// <summary>
-        /// Default constructor with no arguments. Initialises default values for the needed properties.
+        /// Initializes a new instance of the <see cref="AbstractBehavior"/> class.
         /// </summary>
         protected AbstractBehavior()
         {

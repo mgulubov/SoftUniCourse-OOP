@@ -10,7 +10,7 @@
         private readonly IRepository<ICommand> commandRepository;
  
         /// <summary>
-        /// COnstructor with 1 parameter.
+        /// Initializes a new instance of the <see cref="CommandHandler"/> class.
         /// </summary>
         /// <param name="commandRepository">IRepository object of ICommand generic type.</param>
         public CommandHandler(IRepository<ICommand> commandRepository)

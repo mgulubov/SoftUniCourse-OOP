@@ -8,7 +8,7 @@
     public abstract class AbstractCommand : ICommand
     {
         /// <summary>
-        /// Constructor with one argument.
+        /// Initializes a new instance of the <see cref="AbstractCommand"/> class.
         /// </summary>
         /// <param name="commandName">The command name.</param>
         protected AbstractCommand(string commandName)

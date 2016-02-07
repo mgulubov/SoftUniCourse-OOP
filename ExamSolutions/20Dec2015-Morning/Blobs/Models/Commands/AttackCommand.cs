@@ -11,7 +11,7 @@
         private static readonly string Name = CommandTypes.Attack.ToString().ToLower();
 
         /// <summary>
-        /// Initialises the base constructor with the value of the constant Name.
+        /// Initializes a new instance of the <see cref="AttackCommand"/> class.
         /// </summary>
         public AttackCommand()
             : base(Name)

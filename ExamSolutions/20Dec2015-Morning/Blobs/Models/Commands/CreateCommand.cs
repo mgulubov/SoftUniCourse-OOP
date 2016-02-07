@@ -13,7 +13,7 @@
         private readonly IFactory<IBlob> blobFactory = BlobFactory.Instance;
 
         /// <summary>
-        /// Initialises the base constructor with the value of the Name constant.
+        /// Initializes a new instance of the <see cref="CreateCommand"/> class.
         /// </summary>
         public CreateCommand()
             : base(Name)

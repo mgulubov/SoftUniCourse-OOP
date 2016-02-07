@@ -17,7 +17,7 @@
         private int damage;
 
         /// <summary>
-        /// Consctructor with 5 parameters. Initialises the base constructor with the name parameter.
+        /// Initializes a new instance of the <see cref="Blob"/> class.
         /// </summary>
         /// <param name="name">The name of the blob.</param>
         /// <param name="health">The initial health value of the blob.</param>

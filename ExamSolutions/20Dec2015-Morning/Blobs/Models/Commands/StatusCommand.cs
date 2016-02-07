@@ -12,7 +12,7 @@
         private static readonly string Name = CommandTypes.Status.ToString().ToLower();
 
         /// <summary>
-        /// Initialises the base constructor with the value of the Name constant.
+        /// Initializes a new instance of the <see cref="StatusCommand"/> class.
         /// </summary>
         public StatusCommand()
             : base(Name)

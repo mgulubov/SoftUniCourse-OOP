@@ -18,7 +18,7 @@
         private bool isRunning;
 
         /// <summary>
-        /// Constructort which takes four arguments.
+        /// Initializes a new instance of the <see cref="Engine"/> class.
         /// </summary>
         /// <param name="commandHandler">IHandler object.</param>
         /// <param name="commandArguments">ICommandArguments object.</param>

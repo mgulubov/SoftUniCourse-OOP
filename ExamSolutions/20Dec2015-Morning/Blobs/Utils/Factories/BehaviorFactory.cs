@@ -19,7 +19,7 @@
         private readonly string assemblyInfo = Assembly.GetExecutingAssembly().FullName;
 
         /// <summary>
-        /// Private default constructor.
+        /// Prevents a default instance of the <see cref="BehaviorFactory"/> class from being created.
         /// </summary>
         private BehaviorFactory()
         {
