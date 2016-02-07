@@ -1,5 +1,8 @@
 ﻿namespace Blobs.Utils
 {
+    /// <summary>
+    /// Error Messages class. Contains string constants used for various error messages throughout the project.
+    /// </summary>
     internal static class ErrorMessages
     {
         internal const string InvalidCharacterName = "Character name can't be null or empty.";

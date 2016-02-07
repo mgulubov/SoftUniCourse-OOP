@@ -8,7 +8,7 @@
         /// <summary>
         /// Method for setting Owners.
         /// </summary>
-        /// <param name="blob"></param>
+        /// <param name="blob">The new owner object.</param>
         void SetOwner(IBlob blob);
     }
 }

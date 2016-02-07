@@ -2,10 +2,17 @@
 {
     using Interfaces;
 
+    /// <summary>
+    /// Concrete implementation of IHandler with ICommandArguments generic type.
+    /// </summary>
     public class CommandHandler : IHandler<ICommandArguments>
     {
         private readonly IRepository<ICommand> commandRepository;
  
+        /// <summary>
+        /// COnstructor with 1 parameter.
+        /// </summary>
+        /// <param name="commandRepository">IRepository object of ICommand generic type.</param>
         public CommandHandler(IRepository<ICommand> commandRepository)
         {
             this.commandRepository = commandRepository;

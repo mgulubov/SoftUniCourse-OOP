@@ -6,12 +6,12 @@
     public interface IBehavior : IUpdateable, IOwned
     {
         /// <summary>
-        /// Boolean property, showing whether the Behavior is currently activated.
+        /// Gets a value indicating whether the Behavior is currently activated.
         /// </summary>
         bool IsActivated { get; }
 
         /// <summary>
-        /// Boolean property, showing whether the Behavior was already used before.
+        /// Gets a value indicating whether the Behavior was already used before.
         /// </summary>
         bool WasAlreadyUsed { get; }
 

@@ -4,33 +4,45 @@
     using Interfaces;
     using Utils;
 
+    /// <summary>
+    /// Abstract attack class.
+    /// </summary>
     public abstract class AbstractAttack : IAttack
     {
         private int damage;
-        protected IBlob owner;
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         protected AbstractAttack()
         {
-            this.owner = default(IBlob);
+            this.Owner = default(IBlob);
             this.damage = 0;
         }
 
         public int Damage
         {
-            get { return this.damage; }
+            get
+            {
+                return this.damage;
+            }
+
             protected set
             {
                 if (value <= 0)
                 {
                     throw new ArgumentOutOfRangeException(value.ToString(), ErrorMessages.InvalidAttackDamage);
                 }
+
                 this.damage = value;
             }
         }
 
+        protected IBlob Owner { get; private set; }
+
         public virtual void Attack(IAttackable otherCharacter)
         {
-            if (this.owner == default(IBlob))
+            if (this.Owner == default(IBlob))
             {
                 throw new InvalidOperationException(ErrorMessages.OwnerNotSet);
             }
@@ -45,11 +57,12 @@
 
         public virtual void SetOwner(IBlob newOwner)
         {
-            if (this.owner != default(IBlob))
+            if (this.Owner != default(IBlob))
             {
                 throw new InvalidOperationException(ErrorMessages.OwnerAlreadySet);
             }
-            this.owner = newOwner;
+
+            this.Owner = newOwner;
         }
 
         public void AdjustDamageBy(int adjustValue)

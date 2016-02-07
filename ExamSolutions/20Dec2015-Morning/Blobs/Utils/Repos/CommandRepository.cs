@@ -1,21 +1,37 @@
-﻿using System.Reflection;
-
-namespace Blobs.Utils.Repos
+﻿namespace Blobs.Utils.Repos
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Enums;
+    using Factories;
     using Interfaces;
 
-    public class CommandRepository : IRepository<ICommand>
+    /// <summary>
+    /// Concrete implementation of IRepository with ICommand generic type. 
+    /// Implements IUpdateable.
+    /// </summary>
+    public class CommandRepository : IRepository<ICommand>, IUpdateable
     {
-        private const string FullyQulifiedNamePattern = "Blobs.Models.Commands.{0}, {1}";
-        private readonly string assemblyInfo = Assembly.GetExecutingAssembly().FullName;
+        private static readonly IFactory<ICommand> DefaultCommandFactory = CommandFactory.Instance; 
         private readonly IDictionary<string, ICommand> commands;
+        private readonly IFactory<ICommand> commandFactory; 
 
+        /// <summary>
+        /// Default constructor. Calls the constructor overload with a default command factory object.
+        /// </summary>
         public CommandRepository()
+            : this(DefaultCommandFactory)
         {
+        }
+
+        /// <summary>
+        /// COnstructor with one parameter. Initialises the commands field and populates the commands list through the Update method.
+        /// </summary>
+        /// <param name="commandFactory">The command factory object to be used for creating the commands.</param>
+        public CommandRepository(IFactory<ICommand> commandFactory)
+        {
+            this.commandFactory = commandFactory;
             this.commands = new Dictionary<string, ICommand>();
             this.Update();
         }
@@ -62,10 +78,8 @@ namespace Blobs.Utils.Repos
         {
             foreach (string commandClass in commandClasses)
             {
-                Type type = Type.GetType(string.Format(FullyQulifiedNamePattern, commandClass + "Command", assemblyInfo));
-                ICommand commandObject = (ICommand) Activator.CreateInstance(type);
-                
-                this.commands.Add(commandObject.CommandName, commandObject);
+                ICommand command = this.commandFactory.Create(new[] { commandClass });
+                this.commands.Add(command.CommandName, command);
             }
         }
     }

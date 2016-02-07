@@ -4,6 +4,9 @@
     using Interfaces;
     using Utils;
 
+    /// <summary>
+    /// Concreate implementation of IBlob. Extends Character.
+    /// </summary>
     public class Blob : Character, IBlob
     {
         private readonly IAttack attack;
@@ -13,6 +16,14 @@
         private int health;
         private int damage;
 
+        /// <summary>
+        /// Consctructor with 5 parameters. Initialises the base constructor with the name parameter.
+        /// </summary>
+        /// <param name="name">The name of the blob.</param>
+        /// <param name="health">The initial health value of the blob.</param>
+        /// <param name="damage">The initial damage value of the blob.</param>
+        /// <param name="attack">The Attack object of the blob.</param>
+        /// <param name="behavior">The behavior object of the blob.</param>
         public Blob(string name, int health, int damage, IAttack attack, IBehavior behavior) 
             : base(name)
         {
@@ -28,7 +39,11 @@
 
         public int Health
         {
-            get { return this.health; }
+            get
+            {
+                return this.health;
+            }
+
             private set
             {
                 if (value < 0)
@@ -46,7 +61,11 @@
 
         public int Damage
         {
-            get { return this.damage; }
+            get
+            {
+                return this.damage;
+            }
+
             private set
             {
                 if (value <= 0)
@@ -64,6 +83,7 @@
             {
                 throw new InvalidOperationException(ErrorMessages.DeadBlobAttackError);
             }
+
             this.attack.Attack(otherCharacter);
         }
 
@@ -96,6 +116,7 @@
             {
                 throw new ArgumentOutOfRangeException(healthBonus.ToString(), ErrorMessages.HealthBonusMustBePositive);
             }
+
             this.Health += healthBonus;
         }
 
@@ -133,7 +154,7 @@
 
         private bool HealthConditionIsMet(int healthValue)
         {
-            return healthValue <= (this.initialHealth/2);
+            return healthValue <= (this.initialHealth / 2);
         }
 
         private bool BehaviorIsNotActive()

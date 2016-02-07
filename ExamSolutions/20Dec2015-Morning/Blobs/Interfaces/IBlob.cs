@@ -8,13 +8,13 @@
         /// <summary>
         /// Method for returning the initial Damage value.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The initial damage value.</returns>
         int GetInitialDamage();
 
         /// <summary>
         /// Method for returning the initial Health value.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The initial health value.</returns>
         int GetInitialHealth();
     }
 }

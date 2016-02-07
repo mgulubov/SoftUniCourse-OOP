@@ -2,23 +2,34 @@
 {
     using Interfaces;
 
+    /// <summary>
+    /// Concrete implementation of AbstractAttack.
+    /// </summary>
     public class BlobplodeAttack : AbstractAttack
     {
         public override void SetOwner(IBlob newOwner)
         {
             base.SetOwner(newOwner);
-            this.Damage = this.owner.Damage*2;
+            this.SetDamage();
         }
 
         public override void Attack(IAttackable otherCharacter)
         {
-            base.Attack(otherCharacter);
-            int selfDamage = this.owner.Health / 2;
-            if (this.owner.Health - selfDamage <= 0)
+            int selfDamage = this.Owner.Health / 2;
+            if (this.Owner.Health - selfDamage <= 0)
             {
                 selfDamage++;
             }
-            this.owner.TakeDamage(selfDamage);
+
+            this.Owner.TakeDamage(selfDamage);
+            this.SetDamage();
+
+            base.Attack(otherCharacter);
+        }
+
+        private void SetDamage()
+        {
+            this.Damage = this.Owner.Damage * 2;
         }
     }
 }

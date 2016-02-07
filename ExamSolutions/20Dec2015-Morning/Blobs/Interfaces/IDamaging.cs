@@ -6,7 +6,7 @@
     public interface IDamaging
     {
         /// <summary>
-        /// A Damage property. Setter can be private.
+        /// Gets the Damage value.
         /// </summary>
         int Damage { get; }
 
@@ -19,7 +19,7 @@
         /// <summary>
         /// Method for attacking IAttackable objects.
         /// </summary>
-        /// <param name="otherCharacter"></param>
+        /// <param name="otherCharacter">The character to be attacked.</param>
         void Attack(IAttackable otherCharacter);
     }
 }

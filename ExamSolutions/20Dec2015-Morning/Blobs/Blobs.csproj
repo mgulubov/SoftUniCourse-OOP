@@ -87,6 +87,7 @@
     <Compile Include="Utils\Factories\BehaviorFactory.cs" />
     <Compile Include="Utils\Factories\BlobFactory.cs" />
     <Compile Include="Utils\ErrorMessages.cs" />
+    <Compile Include="Utils\Factories\CommandFactory.cs" />
     <Compile Include="Utils\Handlers\CommandArguments.cs" />
     <Compile Include="Utils\Handlers\CommandHandler.cs" />
     <Compile Include="Utils\InputReaders\ConsoleInputReader.cs" />
@@ -97,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

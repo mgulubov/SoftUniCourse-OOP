@@ -4,25 +4,37 @@
     using Interfaces;
     using Models;
 
-    public class BlobFactory : IFactory<IBlob>
+    /// <summary>
+    /// Concrete implementation of IBlobFactory.
+    /// Implements the Singleton pattern - Singleton [GOF].
+    /// </summary>
+    public class BlobFactory : IBlobFactory
     {
-        public static readonly IFactory<IBlob> Instance = new BlobFactory();
-        private readonly IFactory<IBehavior> behaviorFactory;
-        private readonly IFactory<IAttack> attackFactory; 
+        /// <summary>
+        /// Public constant which is the singleton object for this class.
+        /// </summary>
+        public static readonly IBlobFactory Instance = new BlobFactory();
 
+        /// <summary>
+        /// Private default constructor.
+        /// </summary>
         private BlobFactory()
         {
-            this.behaviorFactory = BehaviorFactory.Instance;
-            this.attackFactory = AttackFactory.Instance; 
+            this.BehaviorFactory = Factories.BehaviorFactory.Instance;
+            this.AttackFactory = Factories.AttackFactory.Instance; 
         }
+
+        public IFactory<IBehavior> BehaviorFactory { private get; set; }
+
+        public IFactory<IAttack> AttackFactory { private get; set; }
 
         public IBlob Create(string[] parameters)
         {
             string blobName = parameters[0];
             int blobHealth = this.TryParseToInt(parameters[1], ErrorMessages.HealthValueIsInvalid);
             int blobDamage = this.TryParseToInt(parameters[2], ErrorMessages.DamageValueIsInvalid);
-            IAttack attack = this.attackFactory.Create(new[] { parameters[3] });
-            IBehavior behavior = this.behaviorFactory.Create(new []{parameters[4]});
+            IAttack attack = this.AttackFactory.Create(new[] { parameters[3] });
+            IBehavior behavior = this.BehaviorFactory.Create(new[] { parameters[4] });
 
             return new Blob(blobName, blobHealth, blobDamage, attack, behavior);
         }

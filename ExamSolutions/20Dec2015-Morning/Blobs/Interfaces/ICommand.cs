@@ -6,12 +6,12 @@
     public interface ICommand : IExecutable
     {
         /// <summary>
-        /// Command Name property.
+        /// Gets the Command Name value.
         /// </summary>
         string CommandName { get; }
 
         /// <summary>
-        /// Command parameters property.
+        /// Sets the Command parameters value.
         /// </summary>
         ICommandArguments CommandParams { set; }
     }

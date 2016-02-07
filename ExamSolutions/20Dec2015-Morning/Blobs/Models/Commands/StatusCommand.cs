@@ -4,10 +4,16 @@
     using Enums;
     using Interfaces;
 
+    /// <summary>
+    /// Status command class. Extends AbstractCommand.
+    /// </summary>
     public class StatusCommand : AbstractCommand
     {
         private static readonly string Name = CommandTypes.Status.ToString().ToLower();
 
+        /// <summary>
+        /// Initialises the base constructor with the value of the Name constant.
+        /// </summary>
         public StatusCommand()
             : base(Name)
         {

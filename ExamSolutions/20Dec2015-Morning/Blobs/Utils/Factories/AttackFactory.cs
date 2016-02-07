@@ -1,17 +1,26 @@
-﻿using System.Reflection;
-
-namespace Blobs.Utils.Factories
+﻿namespace Blobs.Utils.Factories
 {
     using System;
-    using Interfaces;
+    using System.Reflection;
     using Enums;
+    using Interfaces;
 
+    /// <summary>
+    /// Concrete implementation of IFactory. Has an IAttack generic type.
+    /// Implements the Singleton pattern - Singleton [GOF].
+    /// </summary>
     public class AttackFactory : IFactory<IAttack>
     {
+        /// <summary>
+        /// Public constant which is the singleton object for this class.
+        /// </summary>
+        public static readonly IFactory<IAttack> Instance = new AttackFactory();
         private const string FullyQulifiedNamePattern = "Blobs.Models.Attack.{0}, {1}";
         private readonly string assemblyInfo = Assembly.GetExecutingAssembly().FullName;
-        public static readonly IFactory<IAttack> Instance = new AttackFactory();
 
+        /// <summary>
+        /// Private default constructor.
+        /// </summary>
         private AttackFactory()
         {
         }
@@ -24,7 +33,7 @@ namespace Blobs.Utils.Factories
                 throw new ArgumentOutOfRangeException(attackName, ErrorMessages.AttackIsNotSupported);
             }
 
-            Type classType = Type.GetType(string.Format(FullyQulifiedNamePattern, attackName + "Attack", assemblyInfo));
+            Type classType = Type.GetType(string.Format(FullyQulifiedNamePattern, attackName + "Attack", this.assemblyInfo));
             IAttack attack = (IAttack)Activator.CreateInstance(classType);
 
             return attack;
@@ -32,7 +41,7 @@ namespace Blobs.Utils.Factories
 
         private bool AttackIsNotSupported(string attackName)
         {
-            return !Enum.IsDefined(typeof (AttackTypes), attackName);
+            return !Enum.IsDefined(typeof(AttackTypes), attackName);
         }
     }
 }

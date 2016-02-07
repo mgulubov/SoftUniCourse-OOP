@@ -4,11 +4,17 @@
     using Interfaces;
     using Utils.Factories;
 
+    /// <summary>
+    /// Create Command class. Extends AbstractCommand.
+    /// </summary>
     public class CreateCommand : AbstractCommand
     {
         private static readonly string Name = CommandTypes.Create.ToString().ToLower();
         private readonly IFactory<IBlob> blobFactory = BlobFactory.Instance;
 
+        /// <summary>
+        /// Initialises the base constructor with the value of the Name constant.
+        /// </summary>
         public CreateCommand()
             : base(Name)
         {
@@ -23,7 +29,7 @@
             string blobAttack = this.CommandParams.Params[5];
             IRepository<IBlob> blobRepo = this.CommandParams.BlobRepository;
 
-            IBlob blob = this.blobFactory.Create(new[] {blobName, blobHealth, blobDamage, blobAttack, blobBehavior});
+            IBlob blob = this.blobFactory.Create(new[] { blobName, blobHealth, blobDamage, blobAttack, blobBehavior });
             blobRepo.Add(blob);
         }
     }

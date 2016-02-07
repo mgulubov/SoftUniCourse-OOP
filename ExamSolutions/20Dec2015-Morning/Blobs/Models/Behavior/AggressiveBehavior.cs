@@ -2,6 +2,9 @@
 {
     using System;
 
+    /// <summary>
+    /// Concrete implementation of AbstractBehavior.
+    /// </summary>
     public class AggressiveBehavior : AbstractBehavior
     {
         public override void Activate()
@@ -28,7 +31,7 @@
 
         private void UpdateOwnerDamage(int deductedDamage)
         {
-            if (DamageCanBeUpdated(deductedDamage))
+            if (this.DamageCanBeUpdated(deductedDamage))
             {
                 this.Owner.AdjustDamageBy(-deductedDamage);
             }

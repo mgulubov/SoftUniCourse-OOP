@@ -3,6 +3,9 @@
     using System;
     using Interfaces;
 
+    /// <summary>
+    /// Concrete implementation of IOutputWriter.
+    /// </summary>
     public class ConsoleOutputWriter : IOutputWriter
     {
         public void Write(string output)

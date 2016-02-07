@@ -2,6 +2,9 @@
 {
     using System;
 
+    /// <summary>
+    /// COncrete implementation of AbstractBehavior.
+    /// </summary>
     public class InflatedBehavior : AbstractBehavior
     {
         public override void Activate()

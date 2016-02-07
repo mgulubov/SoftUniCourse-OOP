@@ -6,7 +6,7 @@
     public interface ICharacter
     {
         /// <summary>
-        /// Name property of type String. Setter can be private.
+        /// Gets the Name value.
         /// </summary>
         string Name { get; }
     }

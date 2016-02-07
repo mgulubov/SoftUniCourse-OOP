@@ -6,7 +6,7 @@
     public interface IAttackable
     {
         /// <summary>
-        /// Health property.
+        /// Gets the Health value.
         /// </summary>
         int Health { get; }
 

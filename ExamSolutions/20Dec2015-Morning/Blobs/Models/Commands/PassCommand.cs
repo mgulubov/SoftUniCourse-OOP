@@ -2,10 +2,16 @@
 {
     using Enums;
 
+    /// <summary>
+    /// Pass Command class. Extends AbstractCommand.
+    /// </summary>
     public class PassCommand : AbstractCommand
     {
         private static readonly string Name = CommandTypes.Pass.ToString().ToLower();
 
+        /// <summary>
+        /// Initialises the base constructor with the value of the Name constant.
+        /// </summary>
         public PassCommand()
             : base(Name)
         {

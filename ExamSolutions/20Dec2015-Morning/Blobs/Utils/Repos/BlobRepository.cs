@@ -4,17 +4,26 @@
     using Interfaces;
     using Notifiers;
 
-    public class BlobRepository : IRepository<IBlob>
+    /// <summary>
+    /// Concrate implementation of IRepository of IBlob. Implements IUpdateable.
+    /// </summary>
+    public class BlobRepository : IRepository<IBlob>, IUpdateable
     {
-        private static readonly INotifier DefaultNotifier = new Notifier();
         private readonly INotifier notifier;
         private readonly IDictionary<string, IBlob> blobs;
 
+        /// <summary>
+        /// Default constructor. Calls the constructor override with a default INotifier value.
+        /// </summary>
         public BlobRepository()
-            :this(DefaultNotifier)
+            : this(new Notifier())
         {
         }
 
+        /// <summary>
+        /// Constructor with 1 parameter.
+        /// </summary>
+        /// <param name="notifier">INotifier object used in the Update method.</param>
         public BlobRepository(INotifier notifier)
         {
             this.notifier = notifier;

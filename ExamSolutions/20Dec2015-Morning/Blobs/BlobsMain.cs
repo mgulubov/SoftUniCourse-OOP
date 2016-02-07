@@ -1,19 +1,22 @@
-﻿using System;
-using System.Reflection;
-using Blobs.Core;
-using Blobs.Models.Attack;
-using Blobs.Utils.Handlers;
-using Blobs.Utils.InputReaders;
-using Blobs.Utils.OutputWriter;
-using Blobs.Utils.Repos;
-
-namespace Blobs
+﻿namespace Blobs
 {
+    using Core;
     using Interfaces;
+    using Utils.Handlers;
+    using Utils.InputReaders;
+    using Utils.OutputWriter;
+    using Utils.Repos;
 
-    class BlobsMain
+    /// <summary>
+    /// Class contaioning the project's Main method.
+    /// </summary>
+    public static class BlobsMain
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The Main method of the project.
+        /// </summary>
+        /// <param name="args">Arguments passed to the Main method.</param>
+        public static void Main(string[] args)
         {
             IRepository<ICommand> commandRepository = new CommandRepository();
             IHandler<ICommandArguments> commandHandler = new CommandHandler(commandRepository);
@@ -21,7 +24,7 @@ namespace Blobs
             IOutputWriter outputWriter = new ConsoleOutputWriter();
             IRepository<IBlob> blobRepository = new BlobRepository();
             ICommandArguments commandArguments = new CommandArguments(blobRepository, outputWriter);
-            IEngine gameEngine = new Engine(commandHandler, commandArguments, inputReader, blobRepository);
+            IEngine gameEngine = new Engine(commandHandler, commandArguments, inputReader, (IUpdateable)blobRepository);
             commandArguments.Stopable = gameEngine;
 
             gameEngine.Run();

@@ -4,10 +4,16 @@
     using Interfaces;
     using Utils;
 
+    /// <summary>
+    /// Abstract class for IBehavior objects.
+    /// </summary>
     public abstract class AbstractBehavior : IBehavior
     {
         private int turnsCount = 0;
 
+        /// <summary>
+        /// Default constructor with no arguments. Initialises default values for the needed properties.
+        /// </summary>
         protected AbstractBehavior()
         {
             this.IsActivated = false;
@@ -32,8 +38,6 @@
 
                 throw new InvalidOperationException(ErrorMessages.BehaviorNotActive);
             }
-            
-            
         }
 
         public virtual void Activate()
@@ -58,6 +62,7 @@
             {
                 throw new InvalidOperationException(ErrorMessages.OwnerAlreadySet);
             }
+
             this.Owner = newOwner;
         }
     }

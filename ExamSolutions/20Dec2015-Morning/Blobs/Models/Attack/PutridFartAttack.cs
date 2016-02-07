@@ -2,6 +2,9 @@
 {
     using Interfaces;
 
+    /// <summary>
+    /// COncrete implementation of AbstractAttack.
+    /// </summary>
     public class PutridFartAttack : AbstractAttack
     {
         public override void SetOwner(IBlob newOwner)
